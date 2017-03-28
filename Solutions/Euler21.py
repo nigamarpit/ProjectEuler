@@ -4,10 +4,10 @@ def AmicableNumbers():
 	for i in range(1,10001):
 		if checkAmicable(i):
 			sumAmicable+=i
-			print(i,True)
+			#print(i,True)
 			continue
 		#print(i,False)
-	print(sumAmicable)
+	return sumAmicable
 
 def checkAmicable(n):
 	#input(n)
@@ -36,4 +36,4 @@ def sumProperDivisor(n):
 	return sumDivisors
 
 	
-AmicableNumbers()
+print("Sum of all the amicable numbers under 10000: "+str(AmicableNumbers()))
