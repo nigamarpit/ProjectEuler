@@ -9,11 +9,25 @@ def NonAbundantSums():
 	for i in range(1,28124):
 		if checkAbundantNumber(i):
 			lst.append(i)
-		flag=twoAbudantNumbers(i)
-		if not flag:
-			sumTwoAbundantNo.append(i)
-	print("Sum of all the positive integers which cannot be written as the sum of two abundant numbers: "+str(sum(sumTwoAbundantNo)))
+		#flag=twoAbudantNumbers(i)
+		#if not flag:
+		#	sumTwoAbundantNo.append(i)
+	print("Sum of all the positive integers which cannot be written as the sum of two abundant numbers: "+str(compute()))
 
+def compute():
+	l=set()
+	for x in lst:
+		for y in lst:
+			l.add(x+y)
+	s=list()
+	for i in range(1,28124):
+		if not i in l:
+			s.append(i)
+	return(sum(s))
+
+
+
+'''
 def twoAbudantNumbers(n):
 	flag=False
 	i=0
@@ -32,6 +46,7 @@ def twoAbudantNumbers(n):
 		return True
 	else:
 		return False
+'''
 
 def checkAbundantNumber(n):
 	s=findSumProperDivisor(n)
